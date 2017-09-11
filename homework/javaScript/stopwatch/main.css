@@ -7,6 +7,7 @@ See LICENSE for details.
 body {
   padding: 10px 20% 10px;
   text-align: center;
+  font-size: 12px;
 }
 
 main, aside {
@@ -33,3 +34,10 @@ aside ol {
   font-size: 2em;
   margin: 0 30% 0;
 }
+
+li {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
+
