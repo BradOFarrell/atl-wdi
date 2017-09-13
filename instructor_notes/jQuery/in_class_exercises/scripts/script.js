@@ -1,5 +1,9 @@
-// 1. Use jQuery to fetch all `h1` tags and save them to a variable called $h1
+//const $myDiv = $('#myDiv');
+$("#myDiv").text("<h1>klssxzjflsxjckljxklzc</h1>");
+const $h1 = $("h1");
 
+// alert("hi")
+// 1. Use jQuery to fetch all `h1` tags and save them to a variable called $h1
 // 2. Grab the HTML element that is both an H1 and has an ID of "second"
 
 // 3. Select the div with an ID of 'myDiv' and change the text to say "jQuery makes JS easy!"

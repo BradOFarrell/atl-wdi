@@ -64,6 +64,7 @@ const Presenter = {
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
+    alert("hi");
     // Your Code Here
   },
   onClickIncrement: function(event){
