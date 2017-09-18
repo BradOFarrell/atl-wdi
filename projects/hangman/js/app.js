@@ -99,9 +99,9 @@ const GameUI = {
         $('#buttonBox').html(outputHTML);      
     },
     renderAll: function(){
+        GameUI.renderHangman();
         GameUI.renderClue();
         GameUI.renderButtons();
-        GameUI.renderHangman();
     }
 }
     
