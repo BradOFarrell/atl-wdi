@@ -1,12 +1,12 @@
 
-//require express package
 var express = require('express');
-//save an express module as 'app'
-var app     = express();
-// assigning 3000 as our port
-var port    = 3000;
+var hbs = require('hbs');
+var app = express();
+var port = 3000;
 
-// tells the server to listen for requests on port 3000
+app.set("view engine", "hbs");
+app.set('views', './views');
+
 app.listen(port, function(){
   console.log("==========================")
   console.log('LISTENING ON PORT ' + port);
@@ -14,20 +14,23 @@ app.listen(port, function(){
 });
 
 app.get('/', function(req, res){
-    res.send('Welcome to Express Pizza!');
-});
-
-app.get('/', function(req, res){
-    res.send('Welcome to Express Pizza!');
+    res.render('topping', {
+        message: "Welcome to Express Pizza!"
+    });
 });
 
 app.get('/topping/:type', function(req, res, next) {
     const toppingType = req.params.type;
-    res.send(toppingType+"!");        
+    res.render('topping', {
+        toppingType: toppingType
+    });
 });
 
 app.get('/order/:amount/:size', function(req, res, next) {
     const amount = req.params.amount;
     const size = req.params.size;
-    res.send("Order: Amount: "+amount+" Size: "+size); 
+    res.render('order', {
+        amount: amount,
+        size: size
+    });
 });
