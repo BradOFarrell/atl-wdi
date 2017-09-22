@@ -137,3 +137,5 @@ module.exports = {
   order,
   addToMenu
 };
+
+console.log("hello")

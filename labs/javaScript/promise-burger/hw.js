@@ -6,7 +6,8 @@ const kitchen = require('./kitchen');
 // 1. Kitchen has a method called `.readMenu`.  
 // Call this method and console.log the data that comes back when the Promise is resolved.
 
-//CODE FOR QUESTION 1 HERE
+const menu = kitchen.readMenu();
+console.log(menu);
 
 
 // Order Some Food
