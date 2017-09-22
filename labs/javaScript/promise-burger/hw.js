@@ -6,9 +6,7 @@ const kitchen = require('./kitchen');
 // 1. Kitchen has a method called `.readMenu`.  
 // Call this method and console.log the data that comes back when the Promise is resolved.
 
-const menu = kitchen.readMenu();
-console.log(menu);
-
+kitchen.readMenu().then(console.log).catch(console.log);
 
 // Order Some Food
 /* *************************************************************** */
@@ -16,15 +14,13 @@ console.log(menu);
 //  The order method has one argument, the name of the burger you would like to order.  
 //  Console.log the data that comes back about this burger.
 
-// CODE FOR QUESTION 2 HERE
-
+kitchen.order("SWISS & MUSHROOM").then(console.log).catch(console.log);
 
 // 3. Try and use the same method to order a `quesadilla`.  
 //  Since Promise Burger only serves burgers, this will throw an error.  
 //  Make sure that your Promise can be dealt with when it is rejected.
 
-// CODE FOR QUESTION 3 HERE
-
+kitchen.order("QUESADILLA").then(console.log).catch(console.log);
 
 // Add A Burger To The Menu
 /* *************************************************************** */
@@ -41,13 +37,19 @@ const newBurger = {
   "description": ` It becomes difficult to even describe this, the most preposterous of our Bypass Burgers. All you really need to know is that we use three burger patties, three fried eggs, fourteen slices of American cheese, and ten slices of bacon, all packed between two grilled cheese sandwiches. Figuring out how to add condiments is completely up to you. It’s served in a big bowl of french fries and tater tots covered, in lots of our Cheesy-Cheese Goo. Enjoy!`
 }
 
+//kitchen.addToMenu(newBurger).then(console.log).catch(console.log);
+
 // CODE FOR QUESTION 4 HERE
 
 // 5. Validate that the new item has been added to the menu by calling `readMenu` again.  
 // We only want to call `readMenu` after we get a response that is successful. 
 // Remember that we can chain promises together the same way that we can chain jQuery methods.
 
-// REFACTOR QUESTION 4 TO ACCOUNT FOR THIS REQUIREMENT
+kitchen.addToMenu(newBurger)
+.then(
+  kitchen.readMenu().then(console.log).catch(console.log)
+)
+.catch(console.log);
 
 // Stretch Goals
 /* *************************************************************** */
@@ -74,4 +76,6 @@ const customers = [
   }
 ]
 
-// CODE FOR QUESTION 6 HERE
+customers.forEach(function(v) {
+  kitchen.order(v.order).then(console.log).catch(console.log);  
+});
