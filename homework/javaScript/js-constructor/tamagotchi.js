@@ -12,7 +12,7 @@ class Tamagotchi {
     };
     getStatus(){
         let outputStatus = this.getFace(); // Puts face at top of status
-        outputStatus += " "+this.name+": ";
+        outputStatus += " | "+this.name+": ";
         outputStatus += "[Food: "+this.food+" ";
         outputStatus += "| Rest: "+this.rest+" ";
         outputStatus += "| Health: "+this.health+"] ";
@@ -27,7 +27,7 @@ class Tamagotchi {
             outputFace = "\\(‾o‾)/";
         } else if (this.rest < 3){
             outputFace = "/(ó_ò)\\";
-        } else if (this.health > 10 && this.food > 10 && this.rest > 10) {
+        } else if (this.health > 10 && this.rest > 10) {
             outputFace = "<(^_^)>";
         } else {
             outputFace = "<("+this.eyes+"_"+this.eyes+")>";
@@ -37,34 +37,19 @@ class Tamagotchi {
     cry(){
         this.food--;
         this.rest--;
-        console.log("<(T~T)> "+this.name+" is crying!!! \"Waahh!\" [Food -1] [Rest -1]");
+        console.log("<(T~T)> | "+this.name+" is crying!!! \"Waahh!\" [Food -1] [Rest -1]");
         console.log(this.getStatus());
     };
     puke(){
         this.food -= 2;
         this.health--;
-        console.log("(>‾o‾)> "+this.name+" is puking!!! \"Blehh!\" [Food -2] [health -1]");
+        console.log("(>‾o‾)> | "+this.name+" is puking!!! \"Blehh!\" [Food -2] [health -1]");
         console.log(this.getStatus());
     };
     yawn(){
         this.food -= 2;
         this.health--;
-        console.log("<(^o^<) "+this.name+" is yawning... \"Sigh!\" [Food -1] [Rest -2]");
+        console.log("<(^o^<) | "+this.name+" is yawning... \"Sigh!\" [Food -1] [Rest -2]");
         console.log(this.getStatus());
     };
 }    
-
-//create new Tamagotchis
-let monster1 = new Tamagotchi("Tommy", "XL");
-let monster2 = new Tamagotchi("Gotchy", "XL");
-
-//create new Tamagotchis
-console.log(monster1);
-console.log(monster2);
-
-//Invoke methods on the constructed objects:
-monster1.cry();
-monster2.puke();
-
-
-//test out your Tamagotchies below via console.logs
