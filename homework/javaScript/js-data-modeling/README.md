@@ -30,7 +30,21 @@ entities/abstractions (e.g. Senior Paws app, above) that the app might use, and 
 This app provides easy access to all your e-mail service providers in one app. The app will let you select one of your email addresses and view your e-mails for that address.
 
 ```
-Write your answer here or in a separate js file.
+var Profile = {
+  name: "GmailMain",
+  unreadCount: 34403,
+  starredCount: 42,
+  totalCount: 240,
+  emails: [Emails]
+} 
+
+var Emails = {
+    fromAddress: "Example@Gmail.com",
+    toAddresss: "Example@Gmail.com",
+    Subject: "Subject String",
+    Body: "Body string",
+    Attatchments: [{}]
+  }
 ```
 
 ### 2. Radio on the Internet app
@@ -39,7 +53,23 @@ This app hosts a ton of radio stations, each featuring their own playlists of so
 
 
 ```
-Write your answer here or in a separate js file.
+var Profile = {
+  username: "BradOFarrell",
+  favoriteStations: [{RadioStation}]
+}
+
+var RadioStation = {
+  name: "Diet Pepsi",
+  genre: "Vaporewave",
+  popularityRank: 20,
+  tracks: [{Tracks}]
+} 
+
+var Tracks = {
+  trackName: "Totally Rad",
+  artist: "Luxury Elite",
+  album: "With Love"
+} 
 ```
 
 ### 3. Rock Concert App
@@ -47,19 +77,78 @@ Write your answer here or in a separate js file.
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
 ```
-Write your answer here or in a separate js file.
+var Profile = {
+  username: "BradOFarrell",
+  favoriteBands: [{Band}]
+}
+
+var Band = {
+  name: "The Killers",
+  tours: [{Tour}]
+}
+
+var Tour = {
+  Stops: [{
+    Date: "10-31-2017",
+    City: "Charolette",
+    RSVPs: [{Profile} array]
+  }]
+}
+
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
 
+```
+
+var Profile = {
+  username: "BradOFarrell",
+  currentOrder: {Cart},
+  pastOrders: [{Cart} array],
+  favoriteShops: [{CoffeeShop} array]
+}
+
+var CoffeeShop = {
+  name: "Central Perk",
+  menu: [{OrderItems} Array]
+}
+
+var Cart = {
+  orders: [{OrderItems} array]
+}
+
+var OrderItems = {
+  name: "Coffee",
+  Price: 1.75,
+  soldBy: [CoffeeShop]
+}
+
+
+```
+
 ### 5. Team Tracker App
 
 This app shows you all the latest stats from your favorite sports teams. You can view individual player stats and full team stats.
 
 ```
-Write your answer here or in a separate js file.
+var Team = {
+  name: "FlyQuest",
+  game: "League of Legends",
+  wins: 8,
+  loss: 22,
+  Roster: [{Player} array]
+}
+
+var Player = {
+  Name: "LemonNation",
+  Position: "Support",
+  Joined: "May 27, 2017",
+  wins: 20,
+  losses: 93
+}
+
 ```
 
 
@@ -68,7 +157,7 @@ Write your answer here or in a separate js file.
 Q. When you were creating relationships between the models, what were some thoughts or questions you had to help guide a connection between them?
 
 ```
-Write your answer here or in a separate js file.
+I'm initially assuming a lot of it will all fit within a lot fewer objects, then realizing I have to break things out into multiple objects. It's also actually pretty hard to model the data without knowing more about the hypothetical business model.
 ```
 
 ### Reading and Videos for Tomorrow
