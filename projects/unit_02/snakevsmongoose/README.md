@@ -1,6 +1,7 @@
 # Project #2: Snake vs Mongoose
 
 ![](https://i.imgur.com/Ofg4J7Sl.jpg)
+*(Working mockup)*
 
 ### Overview:
 
@@ -21,5 +22,5 @@ The purpose of this project is to familiarize myself with MongoDB, Express, Mong
 ### External Links
 
 * [Trello Board (contains user stories)](https://trello.com/b/5zyFGe0u/snake-vs-mongoose)
-* [Heroku (will host final app)] ()
+* [Heroku (will host final app)](https://powerful-lowlands-91821.herokuapp.com/cool)
 
