@@ -1,6 +1,7 @@
 # Project #2: Snake vs Mongoose
 
 ![](https://i.imgur.com/Ofg4J7Sl.jpg)
+
 *(Working mockup)*
 
 ### Overview:
