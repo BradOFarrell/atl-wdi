@@ -1,4 +1,4 @@
-#Project #2: Snake vs Mongoose
+#Project 2: Snake vs Mongoose
 
 ![](https://i.imgur.com/Ofg4J7Sl.jpg)
 
@@ -16,7 +16,7 @@
 
 ### Data Model
 
-![]https://trello.com/b/5zyFGe0u/snake-vs-mongoose
+![](https://trello.com/b/5zyFGe0u/snake-vs-mongoose)
 
 ### External Links
 
