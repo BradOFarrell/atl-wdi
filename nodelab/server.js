@@ -1,5 +1,6 @@
-const express = require('express');
-const app = express();
+var express = require('express'); // Loading express on our server
+var app = express(); // install express on our server
+var hbs = require('hbs'); // loads handlebars
 
 app.get('/', (request, response) => {
   response.send("hello wdi12");

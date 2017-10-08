@@ -1,0 +1,25 @@
+{
+  "name": "practicenode",
+  "version": "1.0.0",
+  "description": "A practice node",
+  "main": "server.js",
+  "scripts": {
+    "test": "console.log(\"Hello world\")",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BradOFarrell/atl-wdi/practicenode"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "Brad OFarrell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "handlebar": "^1.0.0",
+    "handlebars": "^4.0.10",
+    "hbs": "^4.0.1"
+  }
+}
