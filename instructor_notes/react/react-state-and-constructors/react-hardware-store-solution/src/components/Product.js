@@ -49,13 +49,13 @@ class Product extends Component {
     const productName = this.props.productName
     const description = this.props.description
     const price = this.props.price
-
+    const quantity = this.props.quantity
+    
     return (
       <div className="product-display">
-        <h3>{productName}</h3>
+        <h3>{productName} {(quantity > 0 )? quantity : null}</h3>
         <div>{description}</div>
-        <div>{price}</div>
-
+        <div>${price}</div>
         {this.showOptions()}
       </div>
     )
