@@ -10,14 +10,14 @@ class App extends Component {
     super();
     this.state = {
       movie: example,
-      apiurl: "http://img.omdbapi.com/?apikey=d31f1a94&"
+      apiurl: "http://www.omdbapi.com/?apikey=d36d1964&"
     }
   }
 
   // http://img.omdbapi.com/?i=tt2294629&apikey=d31f1a94 
   //Update these methods to make axios calls to OMDB and update this.state.movie with the response from the server
   _searchByTitle = (title) => {
-    let searchURL = "http://www.omdbapi.com/?i=tt3896198&apikey=d36d1964"
+    let searchURL = this.state.apiurl+"t="+title
     console.log(searchURL)
     axios.get(searchURL).then((res) => {
       console.log(res.data);
@@ -26,23 +26,28 @@ class App extends Component {
     .catch((err) => {
       console.log("Error loading users. "+err);
     })
-
     console.log("Search by Title: "+title);
   }
 
-  _searchById = () => {
-    console.log("Search by ID");
+  _searchById = (id) => {
+    let searchURL = this.state.apiurl+"i="+id
+    console.log(searchURL)
+    axios.get(searchURL).then((res) => {
+      console.log(res.data);
+      this.setState({movie: res.data})
+    })
+    .catch((err) => {
+      console.log("Error loading users. "+err);
+    })
+    console.log("Search by ID: "+id);
   }
 
   //Pass _searchByTitle, _searchById, and this.state.movie to it's appropriate child components.
-  componentDidMount(){
-    this._searchByTitle("Spiderman");
-  }
   render() {
     return (
       <div className="App">
         <Header />
-        <Search />
+        <Search searchByTitle={this._searchByTitle} searchById={this._searchById}/>
         <Movie movie={this.state.movie}/>
       </div>
     );
